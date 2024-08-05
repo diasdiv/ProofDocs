@@ -1,0 +1,170 @@
+{"abi" : [
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_docID",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_hash",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_docURL",
+				"type": "string"
+			}
+		],
+		"name": "addDocument",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_issuer",
+				"type": "address"
+			}
+		],
+		"name": "addIssuer",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "issuer",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "docID",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "hash",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "docURL",
+				"type": "string"
+			}
+		],
+		"name": "DocumentAdded",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_hash",
+				"type": "string"
+			}
+		],
+		"name": "checkDocument",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "docID_",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "hash_",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "docURL_",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"name": "documents",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "docID",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "hash",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "docURL",
+				"type": "string"
+			},
+			{
+				"internalType": "bool",
+				"name": "flag",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "issuers",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
+}

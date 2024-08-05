@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+      <style>
+        table{
+          border: 2px solid lightgray;
+          border-collapse: collapse;
+        }      
+        th, td{
+          border: 1px solid white;
+          border-collapse: collapse;
+        }
+        .button {
+          display: inline-block;
+          padding: 5px 10px;
+          text-align: center;
+          text-decoration: none;
+          color: #ffffff;
+          background-color: #c2c7c7;
+          border-radius: 6px;
+          outline: none;
+          transition: 0.3s;
+        }
+        .button:hover {
+          color: #c2c7c7;
+          background-color: #ffffff;
+        }
+        p {
+          text-align: right;
+          font-size:12px;
+          font-family:'Courier New';
+          color:lightgray;
+        }
+        .remarkright {
+          text-align:right; 
+          font-family:'Courier New'; 
+          color:grey; 
+          font-size:14px; 
+          font-weight: bold;   
+        }
+        .remarkleft {
+          text-align:left; 
+          font-family:'Courier New'; 
+          color:grey; 
+          font-size:12px;   
+        }        
+      </style>  
+  
+      <title>Result</title>
+  </head>
+  <body>
+    <hr>
+    <a class="button" href="../"">Home</a>
+    <br><br>
+    <center>
+      <!-- <table style="width:60%"> -->
+      <table>
+        <tr>
+          <th colspan="2" bgcolor={{result["color"]}}>{{result["reason"]}}</th>
+        </tr>
+        <tr>
+          <th align="left">Hash value</th>
+          <td>{{result["hash_value"]}}</td>        
+        </tr>
+        <tr bgcolor="lightgray">
+          <th align="left">หมายเหตุ</th>
+          <td>{{result["doc_id"]}}</td>
+        </tr>
+        <tr>
+          <th align="left">ไฟล์เอกสาร</th>
+          <!-- <td><a href="{{url_for('download', filename = result["doc_url"])}}">{{result["doc_url"]}}</a></td> -->
+          {% if result["doc_url"] == "" %}
+            <td></td>
+          {% else %}
+            <td><a href="{{url_for('download', filename = result["doc_url"])}}"> download file </a></td>
+          {% endif %}
+        </tr>
+      </table>  
+    </center>
+    <br>
+    <center>
+      <a class="button" href="{{url_for(result["back_url"])}}">Go Back</a>
+    </center>
+    <br><br>
+    <hr>
+    <p>
+      * poc * กนม.ฝยท. 
+    </p> 
+    <center>
+      {% if result["tx_hash"] != "" %}
+        <table>
+          <tr>
+            <th class="remarkright">transaction id :</th>
+            <td class="remarkleft"><a target="_blank" href="https://sepolia.etherscan.io/tx/{{result["tx_hash"]}}">{{result["tx_hash"]}}</a></td>
+          </tr>
+          <tr>
+            <th class="remarkright">transaction fee :</th>
+            <td class="remarkleft">{{result["tx_fee"]}} ETH </td>
+          </tr>
+        </table>
+      {% endif %}
+    </center>
+  </body>
+</html>

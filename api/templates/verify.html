@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+      <style>
+        table{
+          border: 2px solid lightgray;
+          border-collapse: collapse;
+        }      
+        th, td{
+          border: 1px solid white;
+          border-collapse: collapse;
+        }
+        .button {
+          display: inline-block;
+          padding: 5px 10px;
+          text-align: center;
+          text-decoration: none;
+          color: #ffffff;
+          background-color: #c2c7c7;
+          border-radius: 6px;
+          outline: none;
+          transition: 0.3s;
+        }
+        .button:hover {
+          color: #c2c7c7;
+          background-color: #ffffff;
+        }
+        p {
+          text-align: right;
+          font-size:12px;
+          font-family:'Courier New';
+          color:lightgray;          
+        }
+      </style>  
+  
+      <title>Verify File Integrity</title>
+  </head>
+  <body>
+    <hr>
+    <a class="button" href="../"">Home</a>
+    <center>
+      <h1>ตรวจสอบไฟล์เอกสาร</h1> 
+      <br>   
+      <form action="/verify_hash" method="post" enctype="multipart/form-data">
+        <br>
+        <!-- <table style="width:50%"> -->
+        <table>
+          <tr>
+            <th><br><input type="file" name="file" value=""><br><br></th>
+          </tr>
+          <tr>
+            <th><input type="submit" value="ตรวจสอบ"><br><br></th>
+          </tr>
+        </table>
+      </form>
+    </center>
+    <br><br>
+    <hr>
+    <p>
+      * poc * กนม.ฝยท.
+    </p>  
+    <p>
+      accept files smaller than 1 MB, and no files will be saved * modified for vercel hosting
+    </p>
+  </body>
+</html>
