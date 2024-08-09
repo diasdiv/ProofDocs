@@ -213,5 +213,5 @@ def hash_file(filename):
 
   return readable_hash
 
-
-# app.run(host="0.0.0.0", port=81)
+if os.getenv("host_name") != "vercel":
+  app.run(host="0.0.0.0", port=81)
